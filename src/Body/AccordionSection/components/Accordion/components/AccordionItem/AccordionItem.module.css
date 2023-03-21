@@ -1,0 +1,14 @@
+.box {
+    border-bottom:  0.5px solid grey;
+    padding: 0 20px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item:hover {
+    cursor: pointer;
+}

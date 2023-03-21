@@ -1,12 +1,10 @@
-import { AccordionItems } from './components/AccordionItems/AccordionItems.js';
+import { Accordion } from './components/Accordion/Accordion.js';
 
 const AccordionSection = () => {
     return (
-        <div>
-            <section>
-                <AccordionItems/>
-            </section>
-        </div>
+        <section>
+            <Accordion/>
+        </section>
     )
 }
 
