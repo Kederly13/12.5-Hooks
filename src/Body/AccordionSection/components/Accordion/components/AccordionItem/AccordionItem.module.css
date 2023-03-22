@@ -12,3 +12,7 @@
 .item:hover {
     cursor: pointer;
 }
+
+.active {
+    background-color: green;
+}

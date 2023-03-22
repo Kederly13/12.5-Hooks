@@ -1,9 +1,12 @@
 import { Accordion } from './components/Accordion/Accordion.js';
 
+
 const AccordionSection = () => {
     return (
         <section>
-            <Accordion/>
+            <div class="container">
+                <Accordion/>
+            </div>          
         </section>
     )
 }

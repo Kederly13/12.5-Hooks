@@ -1,6 +1,4 @@
-import { useState } from 'react';
-
-import { cars } from './data/cars.js';
+import { useEffect, useState } from 'react';
 
 import { AccordionItem } from './components/AccordionItem/AccordionItem.js'
 
@@ -9,16 +7,23 @@ import classes from './Accordion.module.css';
 const Accordion = () => {
 
     const [active, setActive] = useState(null);
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then(response => response.json())
+      .then(json => setUsers(json));    
+    }, []);
 
     return (
         <div>
-            {!!cars?.length && 
-            cars.map(({ id, name, details }) => {
+            {users.map(({ id, name, username, email }) => {
                 return (
                     <AccordionItem
                         key={id}
                         name={name}
-                        details={details}
+                        username={username}
+                        email={email}
                         setActive={setActive}
                         active={active}
                     />
