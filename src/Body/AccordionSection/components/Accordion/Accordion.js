@@ -4,16 +4,10 @@ import { AccordionItem } from './components/AccordionItem/AccordionItem.js'
 
 import classes from './Accordion.module.css';
 
-const Accordion = () => {
+const Accordion = ({ users }) => {
 
     const [active, setActive] = useState(null);
-    const [users, setUsers] = useState([]);
-
-    useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then(response => response.json())
-      .then(json => setUsers(json));    
-    }, []);
+    
 
     return (
         <div>
