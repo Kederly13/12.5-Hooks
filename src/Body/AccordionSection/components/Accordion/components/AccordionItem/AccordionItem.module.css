@@ -3,6 +3,18 @@
     padding: 0 20px;
 }
 
+.arrow {
+    transition: transform 0.3s;
+  }
+  
+.arrow.flip {
+    transform: rotate(180deg);
+}
+
+.box.active {
+    background-color:aliceblue;
+}
+
 .item {
     display: flex;
     align-items: center;
@@ -13,6 +25,3 @@
     cursor: pointer;
 }
 
-.active {
-    background-color: green;
-}

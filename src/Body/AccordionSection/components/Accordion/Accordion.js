@@ -4,20 +4,20 @@ import { AccordionItem } from './components/AccordionItem/AccordionItem.js'
 
 import classes from './Accordion.module.css';
 
-const Accordion = ({ users }) => {
+const Accordion = ({ data }) => {
 
     const [active, setActive] = useState(null);
     
 
     return (
         <div>
-            {users.map(({ id, name, username, email }) => {
+            {data.map(({ id, name, username, email }) => {
                 return (
                     <AccordionItem
                         key={id}
-                        name={name}
-                        username={username}
-                        email={email}
+                        title={name}
+                        description={username}
+                        details={email}
                         setActive={setActive}
                         active={active}
                     />

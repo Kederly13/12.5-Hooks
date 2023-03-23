@@ -9,4 +9,4 @@ const ArrowDown = () => {
     </svg>
 }
 
-export {ArrowDown }
+export { ArrowDown }

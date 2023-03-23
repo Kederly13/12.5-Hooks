@@ -10,12 +10,12 @@ const AccordionSection = () => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then(json => setUsers(json));    
-    }, users);
+    }, [users]);
 
     return (
         <section>
             <div class="container">
-                <Accordion users={users}/>
+                <Accordion data={users}/>
             </div>          
         </section>
     )

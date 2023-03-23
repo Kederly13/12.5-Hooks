@@ -1,19 +1,18 @@
-
 import classes from './AccordionItem.module.css';
 
-import iconArrow from '../../../../../../'
+import iconArrow from '../../img/arrowDown.svg';
 
-const AccordionItem = ({ id, name, username, email, setActive, active}) => {
+const AccordionItem = ({ id, title, description, details, setActive, active}) => {
     let className = classes.box;
     return (
-        <div key={id} className={active === name ? className += classes.active : className}>
-            <div className={classes.item} onClick={() => setActive(active === name  ? null : name)}>
-                <h3>{name}</h3>
-                <img src='/img/arrow.svg' alt="arrow"></img>
+        <div key={id} className={active === title ? className += ` ${classes.active}` : className}>
+            <div className={classes.item} onClick={() => setActive(active === title  ? null : title)}>
+                <h3>{title}</h3>
+                <img src={iconArrow} className={`${classes.arrow} ${active === title ? classes.flip : ''}`}  alt="arrow"/>
             </div>
-            {active === name && (<div>
-            <p>{username}</p> 
-            <p>{email}</p>
+            {active === title && (<div>
+            <p>{description}</p> 
+            <p>{details}</p>
             </div>)}
         </div>
     )
